@@ -7,4 +7,5 @@
 # .scan(/hb?t?n/) searches for the pattern "hb?t?n" in the argument.
 # "hb?t?n" matches "hbn," "hbtn," "hbtnn," "hbbtn," and similar patterns with optional 't' characters.
 # .join combines and prints the matching occurrences as a single string.
+
 puts ARGV[0].scan(/hb?t?n/).join

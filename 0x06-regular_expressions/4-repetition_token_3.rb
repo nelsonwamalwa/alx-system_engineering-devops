@@ -7,4 +7,5 @@
 # .scan(/hbt*n/) searches for the pattern "hbt*n" in the argument.
 # "hbt*n" matches strings that start with "hb," followed by zero or more 't' characters, and then followed by 'n'.
 # .join combines and prints the matching occurrences as a single string.
+
 puts ARGV[0].scan(/hbt*n/).join
