@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # displaying all the active IPv4 IPs on 
 # the machine it's executed on
 
