@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # pings IP address passed as an argument
 
 ping -c5 -i3 8.8.8.8
