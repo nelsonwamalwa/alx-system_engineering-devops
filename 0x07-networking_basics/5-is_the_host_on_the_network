@@ -1,10 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# pings an IP address passed as an argument
-
-ping -c5 -i3 8.8.8.8
-if [ $? -eq 0 ]
-then /root/scripts/test1.sh
-exit 0
-else echo “Usage: 5-is_the_host_on_the_network {IP_ADDRESS}”
+# Check if an IP address argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
 fi
+
+# Extract the IP address from the argument
+ip_address="$1"
+
+# Perform ping 5 times and display the results
+ping -c 5 "$ip_address"
