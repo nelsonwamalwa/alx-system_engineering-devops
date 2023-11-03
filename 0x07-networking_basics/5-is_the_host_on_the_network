@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if an IP address argument is provided
 if [ $# -ne 1 ]; then
@@ -9,5 +9,14 @@ fi
 # Extract the IP address from the argument
 ip_address="$1"
 
-# Perform ping 5 times and display the results
-ping -c 5 "$ip_address"
+# Perform ping 5 times with a 3-second interval and display the results
+ping -c 5 -i 3 "$ip_address"
+
+# Check the exit status of the ping command
+if [ $? -eq 0 ]; then
+    /root/scripts/test1.sh
+    exit 0
+else
+    echo "Host $ip_address is not reachable or there was an issue with the ping."
+    exit 1
+fi
