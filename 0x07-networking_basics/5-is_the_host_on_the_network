@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Pinging an IP address received as an argument 5 times.
+# pings an IP address passed as an argument
 
 ping -c5 -i3 8.8.8.8
 if [ $? -eq 0 ]
