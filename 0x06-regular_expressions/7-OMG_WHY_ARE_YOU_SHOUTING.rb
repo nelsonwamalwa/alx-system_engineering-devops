@@ -8,4 +8,4 @@
 # [A-Z]* matches zero or more consecutive uppercase letters.
 # .join combines and prints the matching occurrences as a single string.
 
-puts ARGV[0].scan(/[A-Z]*/).join
+puts ARGV[0].scan(/[A-Z]/).join
