@@ -1,0 +1,17 @@
+## Additional Components and Explanations:
+1. **Firewalls:** Firewalls act as gatekeepers, filtering incoming and outgoing network traffic based on predefined rules and security policies. They protect the infrastructure from unauthorized access, malicious attacks, and data breaches.
+    - **Front-End Firewall:** The front-end firewall protects the load balancer and web server from external threats. It filters incoming traffic, blocks suspicious connections, and prevents unauthorized access attempts.
+    - **Application Firewall:** The application firewall protects the application server from application-level attacks, such as SQL injection and cross-site scripting (XSS). It monitors application-specific traffic patterns and blocks malicious requests.
+    - **Database Firewall:** The database firewall protects the database from unauthorized access and data manipulation. It controls access to the database and restricts database queries based on security policies.
+2. **SSL Certificate:** An SSL certificate, or Secure Sockets Layer certificate, enables HTTPS encryption, securing communication between the web server and the client's browser. It encrypts data transmission, protecting sensitive information, such as login credentials and financial data, from interception and eavesdropping.
+3. **Monitoring Clients:** Monitoring clients, or data collectors, gather performance and health data from the servers and infrastructure components. They provide real-time insights into system performance, resource utilization, and application health, enabling proactive problem detection and resolution.
+**Monitoring QPS (Queries Per Second):**
+
+To monitor QPS (Queries Per Second) for the web server, you can use a monitoring client that collects metrics related to HTTP requests and response times. By analyzing these metrics, you can identify trends, potential bottlenecks, and performance issues related to the web server's handling of requests.
+
+**Potential Issues:**
+
+1. **SSL Termination at Load Balancer:** While terminating SSL at the load balancer offloads encryption from the web servers, it can introduce a single point of failure (SPOF) if the load balancer fails. Consider using a hardware load balancer with dedicated SSL acceleration capabilities to mitigate this risk.
+2. **Single MySQL Write Server:** Having only one MySQL server capable of accepting writes creates a potential SPOF and limits scalability. Implement a database Primary-Replica (Master-Slave) cluster to enable write operations on multiple servers, enhancing availability and scalability.
+3. **Identical Server Components:** Having servers with all the same components (database, web server, and application server) can make it challenging to scale components independently. Consider using a containerized environment, such as Docker, to package each component separately, allowing for flexible scaling of individual components.
+

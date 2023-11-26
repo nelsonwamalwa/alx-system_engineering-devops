@@ -1,0 +1,25 @@
+## **Components:**
+1. **Server:** A server is a powerful computer that provides resources, data, services, or programs to other computers, known as clients, over a network.
+2. **Domain Name:** A domain name is a unique identifier for a website on the internet. It acts as an address that users can type into a web browser to find and access a website.
+3. **IP Address:** An IP address, or Internet Protocol address, is a unique numerical identifier assigned to every device on the internet.
+4. **DNS Record:** A DNS record, or Domain Name System record, is an entry in a DNS database that maps a domain name to an IP address. 
+5. **Web Server:** A web server is a program that delivers web pages to users' web browsers.
+6. **Application Server:** An application server is a program that runs the application logic and handles user requests.
+7. **Database:** A database is a structured collection of data that is organized and stored for easy retrieval and management.
+## **Understanding the Infrastructure:**
+1. **Server: **The server acts as the central point for hosting and delivering the application and its associated data.
+2. **Domain Name:** The domain name "[﻿foobar.com](https://foobar.com/)" is configured with a "www" record that points to the server's IP address 8.8.8.8.
+3. **DNS Record:** The "www" record associates the domain name "[﻿foobar.com](https://foobar.com/)" with the IP address 8.8.8.8, allowing users to access the websites using the familiar domain name rather than the direct IP address.
+4. **Web Server:** A web server, such as Nginx, is responsible for receiving the request from the user's browser, retrieving the appropriate web pages from the application server, and sending them back to the browser.
+5. **Application Server:** The application server is responsible for processing user interactions, accessing the database, and generating dynamic content for the web server to deliver.
+6. **Database:** The database, such as MySQL, Stores the application data, such as user profile, product information, and the order details.
+## **Communication Between Server and User Computer:**
+The server communicates with the user's computer using the Hypertext Transfer Protocol (HTTP), a standardized protocol for exchanging information between web servers and web browsers. When a user requests a web page from the website, their browser sends HTTP request to the server's IP address. The server processes the request, retrieves the requested web page from the application server, and sends back an HTTP response containing the webpage content.
+
+
+
+## **Potential Issues with the Infrastructure:**
+1. **Single Point of Failure (SPOF):** The reliance on a single server for hosting both the web server and application server creates a single point of failure (SPOF). If the server goes down, the entire website becomes unavailable, causing downtime and disrupting user access.
+2. **Downtime during Maintenance:** When maintenance is needed, such as deploying new code, the web server needs to be restarted, causing downtime for the website. This can disrupt user access and potentially impact business operations.
+3. **Scalability Limitations:** The infrastructure's ability to handle increasing traffic is limited due to its reliance on a single server. As traffic grows, the server may become overloaded, leading to slow performance and potential crashes.
+

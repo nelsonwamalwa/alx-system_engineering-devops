@@ -1,0 +1,19 @@
+## **Components and Explanations:**
+1. **Load Balancer (HAproxy):** A load balancer distributes incoming traffic across multiple servers, ensuring efficient resource utilization and preventing overloading of any single server. It acts as a single entry point for client requests, directing traffic to the most appropriate server based on load balancing algorithms.
+2. **Distribution Algorithm:** In this setup, the load balancer is configured with a Round Robin (RR) algorithm, which evenly distributes incoming requests among the available servers in a circular fashion. This ensures that no single server is overwhelmed with traffic, maintaining optimal performance and responsiveness. 
+3. **Active-Active vs. Active-Passive Setup: **In this infrastructure, an active-active setup is recommended to maximize availability and responsiveness.
+    - **Active-Active:** In an active-active setup, both servers are actively handling client requests simultaneously. This configuration provides the highest level of availability, as if one server fails, the other can immediately take over without any downtime.
+    - **Active-Passive:** In an active-passive setup, only one server is actively handling requests at a time, while the other server remains passive as a standby. The passive server is synchronized with the active server's data, ensuring seamless failover when the active server fails.
+4. **Web Server (Nginx):** The web server receives requests from the load balancer, retrieves the requested web pages or static content from the application server, and sends them back to the client's browser. It acts as an intermediary between the client and the application server, handling HTTP requests and delivering web content efficiently.
+5. **Application Server:** The application server hosts the application's code and handles dynamic content generation. It receives requests from the web server, processes user interactions, retrieves data from the database, and generates dynamic web pages to be sent back to the client. It is the core of the application logic and business operations.
+6. **Database (MySQL):** The database stores the application's data, such as user profiles, product information, and order details. It provides a structured and organized data storage system, enabling the application to access and manage its data efficiently.
+**Addressing Potential Issues:**
+
+1. **SPOFs:**
+    - **Load Balancer:** The load balancer is a potential SPOF, as its failure would disrupt traffic distribution and potentially bring down the entire website. To mitigate this risk, consider implementing a redundant load balancer configuration.
+    - **Database:** The database is a potential SPOF, as its failure would prevent the application from accessing its data. To mitigate this risk, consider implementing a database Primary-Replica (Master-Slave) cluster.
+2. **Security Issues:**
+    - **Firewall:** The absence of a firewall leaves the network vulnerable to unauthorized access and cyberattacks. Implement a firewall to filter incoming and outgoing traffic, protecting the infrastructure from malicious activities.
+    - **HTTPS:** The absence of HTTPS means that data transmission is unencrypted, exposing sensitive information to interception. Implement HTTPS to encrypt data communication between the web server and the client's browser, ensuring data confidentiality and integrity.
+3. **Monitoring:** The lack of monitoring makes it difficult to identify and resolve potential issues promptly. Implement monitoring tools to track server performance, resource utilization, and application health, enabling proactive identification and resolution of problems.
+
