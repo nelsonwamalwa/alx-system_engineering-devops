@@ -1,8 +1,16 @@
-#!/usr/bin/env bash
-# This script installs nginx on ubuntu web-01 server
+#!/bin/bash
 
-sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y nginx
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
-sudo ufw allow 'Nginx HTTP'
-sudo service nginx restart
+# Update package list and install nginx with the '-y' option
+apt-get update
+apt-get install -y nginx
+
+# Create a simple HTML page with the desired content
+echo "Hello World!" > /var/www/html/index.html
+
+# Replace the default Nginx configuration to make it listen on port 80
+sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+# Restart Nginx (you can't use systemctl, so we'll use service)
+service nginx restart
+
+exit 0
