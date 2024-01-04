@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
-# Script that installs nginx on the ubuntu server
 
-sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y nginx
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
-sudo ufw allow 'Nginx HTTP'
-sudo service nginx restart
+# Task: Install Nginx Web Server into a remote server.
+# A Script to Install Nginx listening to port 80
+
+# Installing Nginx with -y flag to say yes to any prompt
+apt install nginx -y
+
+# Allowing Firewall for HTTP which listens on port 80
+ufw allow "Nginx HTTP"
+
+# Activating the firewall role
+ufw enable -y
+
+# Server "Hello, World! message" GET request using curl
+echo "Hello World!" >> ~/var/www/html/index.html
+
+# Restarting Nginx without using Systemctl nginx restart
+/etc/init.d/nginx restart
