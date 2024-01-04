@@ -1,19 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Task: Install Nginx Web Server into a remote server.
-# A Script to Install Nginx listening to port 80
+# Update package list and install Nginx
+apt-get update -y
+apt-get install nginx -y
 
-# Installing Nginx with -y flag to say yes to any prompt
-apt install nginx -y
+# Create a basic HTML file with "Hello World!"
+echo "<html><body>Hello World!</body></html>" > /var/www/html/index.html
 
-# Allowing Firewall for HTTP which listens on port 80
-ufw allow "Nginx HTTP"
+# Restart Nginx
+service nginx restart
 
-# Activating the firewall role
-ufw enable -y
-
-# Server "Hello, World! message" GET request using curl
-echo "Hello World!" >> ~/var/www/html/index.html
-
-# Restarting Nginx without using Systemctl nginx restart
-/etc/init.d/nginx restart
+# Exit the script
+exit 0
