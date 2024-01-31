@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 """
-This a script that, using this REST API, for a given employee ID, 
-returns theinformation about his/her TODO list progress
+This is a script that, using this REST API, for a given employee ID,
+returns the information about his/her TODO list progress
 """
 
 import json
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
-
     session_Req = requests.Session()
 
     id_E = argv[1]
@@ -31,6 +29,7 @@ if __name__ == "__main__":
 
     print("Employee {} is done with tasks({}/{}):".
           format(name, totalTasks, len(json_req)))
+
     for done_tasks in json_req:
         if done_tasks['completed']:
             print("\t " + done_tasks.get('title'))
