@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This a script that, using this REST API, for a given employee
+This is a script that, using this REST API, for a given employee
 ID, returns information about his/her TODO list progress
 and exports the data in the CSV format.
 """
@@ -10,9 +10,7 @@ import json
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
-
     session_Req = requests.Session()
 
     id_E = argv[1]
