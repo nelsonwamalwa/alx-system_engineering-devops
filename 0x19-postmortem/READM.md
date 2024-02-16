@@ -1,7 +1,7 @@
-## Issue Summary:**
+# Issue Summary:
 
-# Duration: The outage lasted from February 15, 2024, 10:00 PM to February 16, 2024, 2:00 AM (UTC).
-# Impact:The core service was down, resulting in a complete loss of functionality for all users accessing the platform. Approximately 75% of users were affected, experiencing errors and timeouts during their interactions.
+## Duration: The outage lasted from February 15, 2024, 10:00 PM to February 16, 2024, 2:00 AM (UTC).
+ Impact:The core service was down, resulting in a complete loss of functionality for all users accessing the platform. Approximately 75% of users were affected, experiencing errors and timeouts during their interactions.
 
 ![alt text](postmorterm.jpg)
 
